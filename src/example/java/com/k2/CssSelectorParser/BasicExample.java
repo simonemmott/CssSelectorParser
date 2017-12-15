@@ -10,9 +10,23 @@ public class BasicExample {
 
 	public static void main(String[] args) {
 		
-		List<CssElementFilter> filters = CssSelectorParser.parse("[attr=value]");
+		String cssSelector = ".myClass > img[src$=.jpg], ol#thisId + li[data-myData='some data value']";
 		
-		System.out.println(filters.get(0).elementFilterRules.size());
+		List<CssElementFilter> filters = CssSelectorParser.parse(cssSelector);
+		
+		System.out.println();
+		System.out.println("The CSS selector: "+cssSelector+" was parsed to generate");
+		System.out.println();		
+		System.out.println(filters.get(0).previousFilter.elementFilterRules.get(0).type + " " + filters.get(0).previousFilter.elementFilterRules.get(0).check);
+		System.out.println(filters.get(0).rule + " of");
+		System.out.println(filters.get(0).elementFilterRules.get(0).type + " " + filters.get(0).elementFilterRules.get(0).check + " and");
+		System.out.println(filters.get(0).elementFilterRules.get(1).attribute + " " + filters.get(0).elementFilterRules.get(1).type + " " + filters.get(0).elementFilterRules.get(1).check);
+		System.out.println("Or");
+		System.out.println(filters.get(1).previousFilter.elementFilterRules.get(0).type + " " + filters.get(1).previousFilter.elementFilterRules.get(0).check + " and");
+		System.out.println(filters.get(1).previousFilter.elementFilterRules.get(1).type + " " + filters.get(1).previousFilter.elementFilterRules.get(1).check);
+		System.out.println(filters.get(1).rule + " of");
+		System.out.println(filters.get(1).elementFilterRules.get(0).type + " " + filters.get(1).elementFilterRules.get(0).check);
+		System.out.println(filters.get(1).elementFilterRules.get(1).attribute + " " + filters.get(1).elementFilterRules.get(1).type + " " + filters.get(1).elementFilterRules.get(1).check);
 		
 	}
 
