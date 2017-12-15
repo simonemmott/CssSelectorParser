@@ -4,10 +4,6 @@ import java.util.List;
 
 public class BasicExample {
 
-	public BasicExample() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public static void main(String[] args) {
 		
 		String cssSelector = ".myClass > img[src$=.jpg], ol#thisId + li[data-myData='some data value']";
