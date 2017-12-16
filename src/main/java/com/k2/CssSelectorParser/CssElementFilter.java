@@ -23,13 +23,13 @@ public class CssElementFilter {
 		PREVIOUS_SIBLING,
 		NEXT_SIBLING
 	}
-	PreviousFilterRule rule;
-	CssElementFilter previousFilter;
+	public PreviousFilterRule rule;
+	public CssElementFilter previousFilter;
 	
 	/**
 	 * This list defines the filter rules to be applied to an element
 	 */
-	List<CssElementFilterRule> elementFilterRules = new ArrayList<CssElementFilterRule>();
+	public List<CssElementFilterRule> elementFilterRules = new ArrayList<CssElementFilterRule>();
 	private CssElementFilterRule currentElementFilterRule;
 	
 	private CssSelectorParser parser;

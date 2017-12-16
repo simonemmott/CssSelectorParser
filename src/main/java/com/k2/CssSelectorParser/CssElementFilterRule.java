@@ -25,15 +25,15 @@ public class CssElementFilterRule {
 	/**
 	 * The type of this rule
 	 */
-	Type type = Type.ANY_TAG;
+	public Type type = Type.ANY_TAG;
 	/**
 	 * The name of the attribute to which this rule applies
 	 */
-	String attribute = "";
+	public String attribute = "";
 	/**
 	 * The value that should be used when checking this rule against an element
 	 */
-	String check = "";
+	public String check = "";
 	
 	private Boolean endRule = null;
 	private char quote;
